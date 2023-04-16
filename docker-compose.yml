@@ -1,0 +1,29 @@
+version: '3.1'
+services:
+  spring-app:
+    container_name: springboot-container
+    image: spring-postgre:v1.0
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresqldb
+    networks:
+      - spring-postgres-network
+
+  postgresqldb:
+    container_name: postgre-container
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=employeedb
+    networks:
+      - spring-postgres-network
+
+networks:
+  spring-postgres-network:
+    driver: bridge
+    name: spring-postgres-network
