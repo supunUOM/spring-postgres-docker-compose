@@ -11,9 +11,9 @@
 ### let's check the containers
 `$ docker ps`
 ```agsl
-CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                                            NAMES
-a05e306d29fe   spring-postgre:v1.0   "java -jar app.jar"      53 minutes ago   Up 53 minutes   0.0.0.0:8080->8080/tcp                           springboot-container
-e1a6c191fbc8   postgres              "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   0.0.0.0:5432->5432/tcp                           postgre-container
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                    NAMES
+a05e306d29fe   spring-postgre:v1.0   "java -jar app.jar"      53 minutes ago   Up 53 minutes   0.0.0.0:8080->8080/tcp   springboot-container
+e1a6c191fbc8   postgres              "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   0.0.0.0:5432->5432/tcp   postgre-container
 ```
 
 network has renamed as `spring-postgres-network`
